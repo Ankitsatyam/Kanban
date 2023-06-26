@@ -1,14 +1,35 @@
-import React from 'react'
-import './DropDown.css'
+import React, { useEffect, useRef } from "react";
 
+import "./DropDown.css";
 
+function Dropdown(props) {
+  const dropdownRef = useRef();
 
-const DropDown = () => {
+  const handleClick = (event) => {
+    if (
+      dropdownRef &&
+      !dropdownRef.current?.contains(event.target) &&
+      props.onClose
+    )
+      props.onClose();
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleClick);
+
+    return () => {
+      document.removeEventListener("click", handleClick);
+    };
+  });
+
   return (
-    <div>
-      
+    <div
+      ref={dropdownRef}
+      className={`dropdown custom-scroll ${props.class ? props.class : ""}`}
+    >
+      {props.children}
     </div>
-  )
+  );
 }
 
-export default DropDown
+export default Dropdown;

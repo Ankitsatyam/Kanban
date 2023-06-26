@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { CheckSquare, Clock, MoreHorizontal } from "react-feather";
 
-import Dropdown from "../Dropdown/DropDown"
+import Dropdown from "../Dropdown/DropDown";
 
 import "./Card.css";
 import CardInfo from "./CardInfo/CardInfo";
