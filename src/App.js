@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import Boards from './Components/Boards/Boards.jsx';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='app-navbar'>
+        <h2>kanban</h2>
+      </div>
+      <div className='app_outer'>
+        <div className='app_boards'>
+          <Boards/>
+          <Boards/>
+          <Boards/>
+          <Boards/>
+        </div>
+      </div>
     </div>
   );
 }
